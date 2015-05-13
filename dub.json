@@ -5,5 +5,6 @@
 	"authors": ["Paweł Świątkowski"],
 	"dependencies": {
 		"dyaml": "~>0.5.0"
-	}
+	},
+	"copyFiles": ["unidecode-yaml"]
 }

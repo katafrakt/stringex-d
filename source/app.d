@@ -11,5 +11,5 @@ void main()
 	writeln(decoder.decode(string2));
 
 	writeln(string1);
-	writeln(string1.uni_decode());
+	writeln(string1.unidecode());
 }
