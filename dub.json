@@ -2,6 +2,7 @@
 	"name": "stringex",
 	"description": "Port of Ruby stringex gem to D.",
 	"copyright": "Copyright © 2015, Paweł Świątkowski",
+	"license": "MIT",
 	"authors": ["Paweł Świątkowski"],
 	"dependencies": {
 		"dyaml": "~>0.5.0"
