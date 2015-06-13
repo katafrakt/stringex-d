@@ -30,4 +30,8 @@ decoded = decoder.decode("影响"); // => "Ying Xiang"
 
 ## What for?
 
-This would probably be most useful for web apps and creating URLs for resources with unicode names. Another example is saving files with sane names.
+This would probably be mostly useful for web apps and creating URLs for resources with unicode names. Another example is saving files with sane names.
+
+## License
+
+Released under MIT license.
