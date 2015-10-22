@@ -3,6 +3,7 @@ import yaml;
 import std.utf;
 import std.format;
 import std.path;
+import std.array;
 
 class UniDecoder {
 	Node[string] yamls;
@@ -14,7 +15,10 @@ class UniDecoder {
 		string result = "";
 
 		foreach(c; input.byDchar()) {
-			auto code_group = format("x%02x", c >> 8);
+			auto writer = appender!string();
+			formattedWrite(writer, "x%02x", c >> 8);
+			auto code_group = writer.data;
+
 			auto grouped_point = c & 255;
 			auto decoded = getReplacement(code_group, grouped_point);
 			result ~= decoded;
