@@ -30,7 +30,7 @@ class UniDecoder {
 
 	string getReplacement(string code_group, int grouped_point) {
 		auto ptr = (code_group in yamls);
-		
+
 		if(ptr is null) {
 			loadYml(code_group);
 		}
@@ -43,4 +43,14 @@ class UniDecoder {
 string unidecode(string input) {
 	auto decoder = new UniDecoder();
 	return decoder.decode(input);
+}
+
+unittest {
+	auto decoder = new UniDecoder();
+
+	assert(decoder.decode("abcd") == "abcd");
+	assert(decoder.decode("ABcd") == "ABcd");
+	assert(decoder.decode("ABcd ff") == "ABcd ff");
+	assert(decoder.decode("żółw") == "zolw");
+	assert(decoder.decode("反清復明") == "Fan Qing Fu Ming ");
 }
