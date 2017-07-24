@@ -3,9 +3,5 @@
 	"description": "Port of Ruby stringex gem to D.",
 	"copyright": "Copyright © 2015, Paweł Świątkowski",
 	"license": "MIT",
-	"authors": ["Paweł Świątkowski"],
-	"dependencies": {
-    "dyaml-dlang-tour": "~>0.5.5"
-	},
-	"copyFiles": ["unidecode-yaml"]
+	"authors": ["Paweł Świątkowski", "Sönke Ludwig"]
 }
