@@ -2,8 +2,6 @@
 
 Partial port of Ruby's [stringex](https://github.com/rsl/stringex) into D. Right now it only includes unicode characters replacement via maps provided in YAML files.
 
-Note that using it will create a directory `unidecode-yaml` in your project's root, where all YAML files will be put (if you know any other way to do it better, please let me know).
-
 ## Usage
 
 The simplest way to use it is to simply call a `unidecode` function on a string:
@@ -14,18 +12,16 @@ import stringex.unidecode;
 
 void main()
 {
-	writeln("ŻÓŁW".unidecode());
+	writeln("ŻÓŁW".unidecode()); // => "ZOLW"
+	writeln("影响".unidecode()); // => "Ying Xiang"
 }
 ```
 
-The result will be `ZOLW`.
-
-However, note that using it that way will create a `UniDecoder` class every time you call it and, as a result, loading YAML files on every use. The sane way to use it is to manually instantiate a decoder and reuse it, thus limiting filesystem operations (once loaded, map will be kept in memory):
+In the past there was a `UniDecoder` class used to cache YAML files used for decoding. However since version 0.1 it's no longer needed and it's left only for backwards compatibility, aliasing `unidecode()`.
 
 ```d
 auto decoder = new UniDecoder();
-auto decoded = decoder.decode("żółw"); // => "zolw"
-decoded = decoder.decode("影响"); // => "Ying Xiang"
+auto decoded = decoder.decode("żółć"); // => "zolc"
 ```
 
 ## What for?
