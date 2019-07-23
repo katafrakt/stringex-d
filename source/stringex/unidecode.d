@@ -36,4 +36,5 @@ unittest {
 	assert(unidecode("ABcd ff") == "ABcd ff");
 	assert(unidecode("żółw") == "zolw");
 	assert(unidecode("反清復明") == "Fan Qing Fu Ming ");
+	assert(unidecode("أنا قادر على أكل الزجاج و هذا لا يؤلمن") == "'n qdr 'l~ 'kl lzjj w hdh l yw'lmn");
 }
