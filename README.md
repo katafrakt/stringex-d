@@ -17,13 +17,6 @@ void main()
 }
 ```
 
-In the past there was a `UniDecoder` class used to cache YAML files used for decoding. However since version 0.1 it's no longer needed and it's left only for backwards compatibility, aliasing `unidecode()`.
-
-```d
-auto decoder = new UniDecoder();
-auto decoded = decoder.decode("żółć"); // => "zolc"
-```
-
 ## What for?
 
 This would probably be mostly useful for web apps and creating URLs for resources with unicode names. Another example is saving files with sane names.

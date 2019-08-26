@@ -6,13 +6,6 @@ import std.format;
 import std.path;
 import std.array;
 
-class UniDecoder {
-	string decode(string input)
-	{
-		return unidecode(input);
-	}
-}
-
 string unidecode(string input)
 {
 	auto result = appender!string();

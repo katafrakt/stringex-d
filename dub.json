@@ -1,6 +1,6 @@
 {
 	"name": "stringex",
-	"description": "Port of Ruby stringex gem to D.",
+	"description": "Unicode to ASCII transcoder",
 	"copyright": "Copyright © 2015, Paweł Świątkowski",
 	"license": "MIT",
 	"authors": ["Paweł Świątkowski", "Sönke Ludwig"]
