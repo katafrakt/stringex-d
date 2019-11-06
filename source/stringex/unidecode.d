@@ -2,8 +2,6 @@ module stringex.unidecode;
 
 import stringex.replacements;
 import std.utf;
-import std.format;
-import std.path;
 import std.array;
 import std.conv;
 
@@ -20,7 +18,7 @@ string unidecode(string input)
 
 private string decoded(dchar c) {
 	if (c <= 128) return c.to!string(); // match https://github.com/rsl/stringex/blob/v2.8.5/lib/stringex/unidecoder.rb#L49
-	
+
 	auto grp = c >> 8;
 	auto grouped_point = c & 255;
 
